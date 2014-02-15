@@ -15,3 +15,8 @@ III.  Pull Request
 3. Use latest version (dev)
 4. Do not use master branch!
 5. Use descriptive commit, not "asdf" commit
+6. Every bug fix use [Bug]
+
+IV.  Local Branch & Merging
+
+**always use non-fast-forward**
