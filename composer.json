@@ -6,7 +6,7 @@
 	"require": {
 		"laravel/framework": "4.1.*",
 		"mockery/mockery": "dev-master@dev",
-		"zizaco/mongolid-laravel": "dev-master"	
+		"jenssegers/mongodb": "*"	
 	},
 	"autoload": {
 		"classmap": [
