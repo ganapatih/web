@@ -4,9 +4,13 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
+<<<<<<< HEAD
 		"laravel/framework": "4.1.*",
 		"mockery/mockery": "dev-master@dev",
 		"jenssegers/mongodb": "*"	
+=======
+		"laravel/framework": "4.1.*"
+>>>>>>> master
 	},
 	"autoload": {
 		"classmap": [

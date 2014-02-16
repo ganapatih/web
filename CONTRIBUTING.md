@@ -1,5 +1,6 @@
 # Contribution Guidelines
 
+<<<<<<< HEAD
 I.  Package Management
 
 Follow : [Laravel Package Development](http://laravel.com/docs/packages)
@@ -20,3 +21,6 @@ III.  Pull Request
 IV.  Local Branch & Merging
 
 **always use non-fast-forward**
+=======
+Please submit all issues and pull requests to the [laravel/framework](http://github.com/laravel/framework) repository!
+>>>>>>> master
