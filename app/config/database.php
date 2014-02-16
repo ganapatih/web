@@ -125,7 +125,5 @@ return array(
 			'port'     => 6379,
 			'database' => 0,
 		),
-
-	),	
-
+	),
 );
