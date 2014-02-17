@@ -45,14 +45,16 @@ format data
 
 1. format data update marker
 
-    {
-        "lat" : "-7.8015544026482",
-        "lng" : "110.36512255669",
-        "title" : "Korban di Yogyakarta",
-        "description" : "Kota Yogya",
-        "status_darurat" : "merah",
-        "image" : ""
-    }
+```
+{
+    "lat"            : "-7.8015544026482",
+    "lng"            : "110.36512255669",
+    "title"          : "Korban di Yogyakarta",
+    "description"    : "Kota Yogya",
+    "status_darurat" : "merah",
+    "image"          : ""
+}
+```
 
 todos
 -----
