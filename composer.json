@@ -8,7 +8,8 @@
 		"jenssegers/mongodb": "*"
 	},
 	"require-dev": {
-		"mockery/mockery": "dev-master@dev"
+		"mockery/mockery": "dev-master@dev",
+		"fzaninotto/faker": "1.4.*@dev"
 	},
 	"autoload": {
 		"classmap": [
@@ -17,7 +18,8 @@
 			"app/models",
 			"app/database/migrations",
 			"app/database/seeds",
-			"app/tests/TestCase.php"
+			"app/tests/TestCase.php",
+			"app/exceptions"
 		]
 	},
 	"scripts": {
