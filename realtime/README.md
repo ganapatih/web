@@ -1,7 +1,11 @@
 Ganapatih - Realtime
 ====================
 
-Untuk kebutuhan realtime data web. Masih menggunakan data dummy, jika service dijalankan akan menggenerate data dummy dengan interval waktu tertentu.
+Untuk kebutuhan realtime data web. 
+
+Mode 'development' : Masih menggunakan data dummy, jika service dijalankan akan menggenerate data dummy dengan interval waktu tertentu.
+
+Mode 'production' : Menjadi server notifikasi sekaligus, gearman worker. Menerima data dari gearman client, kemudian mengirimnya ke web client. Gearman jobs : 'newMarker'
 
 install
 -------
@@ -42,8 +46,8 @@ sample penggunaan di web client
 </html>
 ```
 	
-format data
------------
+format data. Note : **bakal diupdate, stay tuned**
+--------------------------------------------------
 
 1. format data update marker
 
@@ -61,5 +65,5 @@ format data
 todos
 -----
 
-1. Integrasi dengan web client
-2. Integrasi menggunakan data dari API
+1. Memastikan format data yg akan digunakan.
+2. Testing keseluruhan
