@@ -41,12 +41,14 @@ class ApiController extends BaseController {
 
 		$this->proceedToken();
 
+		list($lat, $long) = explode(',', Input::get('location'));
+
 		$input = array(
 			'name' => Input::get('name'),
 			'phone' => Input::get('phone'),			
 			'datetime' => date('Y-m-d H:i:s'),
 			'type_victim' => 0,
-			'location' => explode(',', Input::get('location'))
+			'location' => array('lat' => $lat, 'long' => $long)
 		);
 
 		/*
@@ -65,6 +67,7 @@ class ApiController extends BaseController {
 
 		$this->proceedToken();
 
+		list($lat, $long) = explode(',', Input::get('location'));
 		$input = array(
 			'name' => Input::get('name'),
 			'phone' => Input::get('phone'),
@@ -72,7 +75,7 @@ class ApiController extends BaseController {
 			'datetime' => date('Y-m-d H:i:s'),
 			'status' => Input::get('keadaan'),
 			'type_victim' => 1,
-			'location' => explode(',', Input::get('location'))
+			'location' => array('lat' => $lat, 'long' => $long)
 		);
 
 		/*
