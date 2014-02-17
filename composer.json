@@ -8,7 +8,8 @@
 		"jenssegers/mongodb": "*"
 	},
 	"require-dev": {
-		"mockery/mockery": "dev-master@dev"
+		"mockery/mockery": "dev-master@dev",
+		"fzaninotto/faker": "1.4.*@dev"
 	},
 	"autoload": {
 		"classmap": [
