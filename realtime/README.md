@@ -1,7 +1,7 @@
 Ganapatih - Realtime
 ====================
 
-Untuk kebutuhan realtime data web. Masih menggunakan data dummy
+Untuk kebutuhan realtime data web. Masih menggunakan data dummy, jika service dijalankan akan menggenerate data dummy dengan interval waktu tertentu.
 
 install
 -------
