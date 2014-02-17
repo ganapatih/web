@@ -17,35 +17,37 @@ kemudian jalankan
 sample penggunaan di web client
 -------------------------------
 
-    <!DOCTYPE HTML>
-    <html>
-	    <head>
-		    <title>Demo</title>
-	    </head>
-	    <body>
-	
-		    <script src="http://localhost:8080/socket.io/socket.io.js"></script>
-		    <script>
-		      var mapUpdate = io.connect('http://localhost:8080/mapUpdate');
-		  
-		      mapUpdate.on('connect', function () {
-			    mapUpdate.on('newMarker', function(data) {
-			
-				    // data untuk marker baru di map ada disini
-				    console.log(data);
-			    });
-		      });
-		  
-		    </script>
-	    </body>
-    </html>
+```html
+<!DOCTYPE HTML>
+<html>
+    <head>
+	    <title>Demo</title>
+    </head>
+    <body>
+
+	    <script src="http://localhost:8080/socket.io/socket.io.js"></script>
+	    <script>
+	      var mapUpdate = io.connect('http://localhost:8080/mapUpdate');
+	  
+	      mapUpdate.on('connect', function () {
+		    mapUpdate.on('newMarker', function(data) {
+		
+			    // data untuk marker baru di map ada disini
+			    console.log(data);
+		    });
+	      });
+	  
+	    </script>
+    </body>
+</html>
+```
 	
 format data
 -----------
 
 1. format data update marker
 
-```
+```json
 {
     "lat"            : "-7.8015544026482",
     "lng"            : "110.36512255669",
