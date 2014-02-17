@@ -1,9 +1,18 @@
 <?php
 
-class ApiController extends BaseController {
+class ApiController extends BaseController {	
+
+	public function token()
+	{
+		Session::put('__token_api', base64_encode(time()));		
+		return Response::json(array('_token' => Session::get('__token_api')));
+	}
 
 	public function register()
 	{
+
+		$this->proceedToken();
+
 		/*
 		setup data
 		 */
@@ -29,6 +38,9 @@ class ApiController extends BaseController {
 
 	public function korban()
 	{
+
+		$this->proceedToken();
+
 		$input = array(
 			'name' => Input::get('name'),
 			'phone' => Input::get('phone'),			
@@ -50,6 +62,9 @@ class ApiController extends BaseController {
 
 	public function relawan()
 	{
+
+		$this->proceedToken();
+
 		$input = array(
 			'name' => Input::get('name'),
 			'phone' => Input::get('phone'),
@@ -69,6 +84,29 @@ class ApiController extends BaseController {
 
 		$job = $gearman->doBackground('relawan', json_encode($input));
 		return Response::json(array('success' => 1));
+	}
+
+	private function checkToken($token)
+	{
+		if (Session::has('__token_api')) {
+			
+			if ($token == Session::get('__token_api')) {
+				Session::flush();
+				return true;
+			}
+
+		}
+
+		return false;
+	}
+
+	private function proceedToken()
+	{
+		$checkToken = $this->checkToken(Input::get('_token'));
+
+		if (!$checkToken) {
+			throw new ApiException('Invalid Token');
+		}
 	}
 
 }

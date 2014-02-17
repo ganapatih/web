@@ -51,6 +51,10 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+App::error(function(ApiException $exception) {
+	return Response::json(array('status' => 'error', 'message' => $exception->getMessage()));
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler
