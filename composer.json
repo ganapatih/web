@@ -5,8 +5,11 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
+		"jenssegers/mongodb": "*"
+	},
+	"require-dev": {
 		"mockery/mockery": "dev-master@dev",
-		"jenssegers/mongodb": "*"	
+		"fzaninotto/faker": "1.4.*@dev"
 	},
 	"autoload": {
 		"classmap": [
