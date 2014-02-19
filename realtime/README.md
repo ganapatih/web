@@ -46,19 +46,20 @@ sample penggunaan di web client
 </html>
 ```
 	
-format data. Note : **bakal diupdate, stay tuned**
+format data. Note : **updated**
 --------------------------------------------------
 
 1. format data update marker
 
 ```json
 {
-    "lat"            : "-7.8015544026482",
-    "lng"            : "110.36512255669",
-    "title"          : "Korban di Yogyakarta",
-    "description"    : "Kota Yogya",
-    "status_darurat" : "merah",
-    "image"          : ""
+    "datetime"    : "2014-02-19 15:40:14",
+    "desc"        : "testing",
+    "location"    : ["-232,3489"],
+    "name"        : "hiraq",
+    "phone"       : "81237",
+    "status"      : null,
+	"type_victim" : 1
 }
 ```
 
