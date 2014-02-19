@@ -2,6 +2,9 @@ function setup(app, config) {
 	var io = require('socket.io').listen(app);
 	app.listen(config.port);
 	
+	var gearmanode = require('gearmanode');
+	gearmanode.Client.logger.transports.console.level = 'info';
+
 	if (process.env.NODE_ENV === 'production') {
 
 		console.log('jugijagijugijagijug~');
@@ -10,6 +13,27 @@ function setup(app, config) {
 			console.log('realtime server is down, nuoooooooooo...');
 			process.exit(0);
 		});
+		
+		
+		app.on('request', function(req, res) {
+			res.writeHead(200);
+			res.end();
+		});
+		
+		var mapUpdate = io
+			.of('/mapUpdate')
+			.on('connection', function (socket) {
+				console.log('open connection');
+			});
+		
+		var worker = gearmanode.worker();
+	
+		worker.addFunction('newMarker', function (job) {
+			mapUpdate.emit('newMarker', JSON.parse(job.payload.toString()));
+			job.workComplete('done');
+		});
+				
+		
 
 	} else if (process.env.NODE_ENV === 'development') {
 		console.log('jugijagijugijagijug~');
