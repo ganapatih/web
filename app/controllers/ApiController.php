@@ -2,11 +2,11 @@
 
 class ApiController extends BaseController {
 
-    protected $gearman;
+    protected $gearman;    
 
     public function __construct()
     {
-        $this->gearman = new GearmanClient();
+        $this->gearman = new GearmanClient();        
     }
 
 	public function token()
@@ -37,6 +37,7 @@ class ApiController extends BaseController {
 		 */
         $job = $this->sendToQueue('register', $input);
 
+        Log::info('register op :'. json_encode($input));        
         return $job;
 	}
 
@@ -62,6 +63,7 @@ class ApiController extends BaseController {
 		 */
         $job = $this->sendToQueue('korban', $input);
 
+        Log::info('korban op :'. json_encode($input));        
         return $job;
 	}
 
@@ -89,6 +91,7 @@ class ApiController extends BaseController {
         //nodejs worker
         $this->sendToQueue('newMarker', $input);
 
+		Log::info('relawan op :'. json_encode($input));                
         return $job;
 	}
 
