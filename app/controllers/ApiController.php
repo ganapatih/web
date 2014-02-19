@@ -35,9 +35,7 @@ class ApiController extends BaseController {
 		send to gearman
 		@TODO : dirapikan menjadi custom lib
 		 */
-        $job = $this->sendToQueue('register', $input);
-
-        Log::info('register op :'. json_encode($input));        
+        $job = $this->sendToQueue('register', $input);        
         return $job;
 	}
 
@@ -61,9 +59,7 @@ class ApiController extends BaseController {
 		send to gearman
 		@TODO : dirapikan menjadi custom lib
 		 */
-        $job = $this->sendToQueue('korban', $input);
-
-        Log::info('korban op :'. json_encode($input));        
+        $job = $this->sendToQueue('korban', $input);        
         return $job;
 	}
 
@@ -86,12 +82,7 @@ class ApiController extends BaseController {
 		send to gearman
 		@TODO : dirapikan menjadi custom lib
 		 */
-        $job = $this->sendToQueue('relawan', $input);
-
-        //nodejs worker
-        $this->sendToQueue('newMarker', $input);
-
-		Log::info('relawan op :'. json_encode($input));                
+        $job = $this->sendToQueue('relawan', $input);        
         return $job;
 	}
 
