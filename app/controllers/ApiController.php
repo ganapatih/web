@@ -35,9 +35,7 @@ class ApiController extends BaseController {
 		send to gearman
 		@TODO : dirapikan menjadi custom lib
 		 */
-        $job = $this->sendToQueue('register', $input);
-        Log::info('register op:'.json_encode($input));
-
+        $job = $this->sendToQueue('register', $input);        
         return $job;
 	}
 
@@ -62,7 +60,8 @@ class ApiController extends BaseController {
 		@TODO : dirapikan menjadi custom lib
 		 */
         $job = $this->sendToQueue('korban', $input);  
-        Log::info('korban op:'.json_encode($input));      
+       	$this->sendToQueue('newMarker', $input);
+
         return $job;
 	}
 
@@ -86,7 +85,8 @@ class ApiController extends BaseController {
 		@TODO : dirapikan menjadi custom lib
 		 */
         $job = $this->sendToQueue('relawan', $input);       
-        Log::info('relawan op:'.json_encode($input)); 
+        $this->sendToQueue('newMarker', $input);
+        
         return $job;
 	}
 
