@@ -53,6 +53,9 @@ class ApiController extends BaseController {
 			'location' => array(Input::get('location'))
 		);
 
+		//nodejs worker
+        $this->sendToQueue('newMarker', $input);
+
 		/*
 		send to gearman
 		@TODO : dirapikan menjadi custom lib
@@ -82,6 +85,9 @@ class ApiController extends BaseController {
 		@TODO : dirapikan menjadi custom lib
 		 */
         $job = $this->sendToQueue('relawan', $input);
+
+        //nodejs worker
+        $this->sendToQueue('newMarker', $input);
 
         return $job;
 	}
