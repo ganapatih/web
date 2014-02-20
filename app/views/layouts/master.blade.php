@@ -6,7 +6,8 @@
 	@section('head')
 	<link rel="stylesheet" href="{{ asset('css/foundation.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{{ asset('css/map.css') }}">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'> 
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<link rel="shortcut icon" href="/favicon.png">
 	@show
@@ -30,6 +31,12 @@
 	</div>
 	<script src="{{ asset('js/vendor/jquery.js') }}"></script>
 	<script src="{{ asset('js/foundation.min.js') }}"></script>
+	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhiBKlzawrAD_L9lIl3SZNW3w6aD5fx8I&sensor=false"></script>
+	<script src="{{ asset('js/map/map.js') }}"></script>
+	<script src="{{ asset('js/map/map-binding.js') }}"></script>
+	
+	
 	<script>$(document).foundation();</script>
 </body>
 </html>

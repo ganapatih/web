@@ -55,7 +55,60 @@
 			    </div>
 			  </div>
 			</form>
-			<iframe width="100%" height="700" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Yogyakarta,+Special+District+of+Yogyakarta,+Indonesia&amp;aq=0&amp;oq=yogyakarta&amp;sll=37.0625,-95.677068&amp;sspn=49.490703,107.138672&amp;ie=UTF8&amp;hq=&amp;hnear=Yogyakarta,+Indonesia&amp;t=m&amp;ll=-7.797228,110.368824&amp;spn=0.119052,0.016994&amp;z=13&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Yogyakarta,+Special+District+of+Yogyakarta,+Indonesia&amp;aq=0&amp;oq=yogyakarta&amp;sll=37.0625,-95.677068&amp;sspn=49.490703,107.138672&amp;ie=UTF8&amp;hq=&amp;hnear=Yogyakarta,+Indonesia&amp;t=m&amp;ll=-7.797228,110.368824&amp;spn=0.119052,0.016994&amp;z=13&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+			<div id="the-Map"></div>
+		<!--	<iframe width="100%" height="700" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Yogyakarta,+Special+District+of+Yogyakarta,+Indonesia&amp;aq=0&amp;oq=yogyakarta&amp;sll=37.0625,-95.677068&amp;sspn=49.490703,107.138672&amp;ie=UTF8&amp;hq=&amp;hnear=Yogyakarta,+Indonesia&amp;t=m&amp;ll=-7.797228,110.368824&amp;spn=0.119052,0.016994&amp;z=13&amp;iwloc=A&amp;output=embed"></iframe><br />
+			<small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Yogyakarta,+Special+District+of+Yogyakarta,+Indonesia&amp;aq=0&amp;oq=yogyakarta&amp;sll=37.0625,-95.677068&amp;sspn=49.490703,107.138672&amp;ie=UTF8&amp;hq=&amp;hnear=Yogyakarta,+Indonesia&amp;t=m&amp;ll=-7.797228,110.368824&amp;spn=0.119052,0.016994&amp;z=13&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+		-->
 		</div>
 	</div>
+	
+	<script>
+	//load from DB perseintent
+	// var POI = <?php echo isset($data)?json_encode($data):"{}"; ?>
+	
+	var POI = {
+		5128 : {
+					"datetime"    : "2014-02-19 15:40:14",
+					"desc"        : "testing",
+					"location"    : [-7.804228,110.42453],
+					"name"        : "hiraq",
+					"phone"       : "81237",
+					"status"      : null,
+					"type_victim" : 1,
+					"unique_key" : 5128	
+				} ,
+		5129 : {
+					"datetime"    : "2014-02-19 15:40:14",
+					"desc"        : "testing",
+					"location"    : [-7.783308,110.410452],
+					"name"        : "hiraq A",
+					"phone"       : "81237",
+					"status"      : null,
+					"type_victim" : 1,
+					"unique_key" : 5129	
+				} ,
+		5130 : {
+					"datetime"    : "2014-02-19 15:40:14",
+					"desc"        : "testing",
+					"location"    : [-7.791812,110.34831],
+					"name"        : "hiraq B",
+					"phone"       : "81237",
+					"status"      : null,
+					"type_victim" : 1,
+					"unique_key" : 5130	
+				} ,
+		5131 : {
+					"datetime"    : "2014-02-19 15:40:14",
+					"desc"        : "testing",
+					"location"    : [-7.795384,110.348654],
+					"name"        : "hiraq C",
+					"phone"       : "81237",
+					"status"      : null,
+					"type_victim" : 1,
+					"unique_key" : 5131	
+				} ,
+
+	};
+	
+	</script>
 @stop
