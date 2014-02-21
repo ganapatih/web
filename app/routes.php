@@ -29,8 +29,7 @@ Route::post('register', array('as' => 'register.post', function() {
 	/*
 	validasi dulu input fieldnya
 	 */
-	$validator = Validator::make(Input::all(), array(
-		'name' => 'required',
+	$validator = Validator::make(Input::all(), array(		
 		'email' => 'required|email',
 		'password' => 'required|min:4'
 	));
@@ -41,9 +40,9 @@ Route::post('register', array('as' => 'register.post', function() {
 	+ validasi message
 	 */
 	if ($validator->fails()) {//validasi gagal
-		return Redirect::to('register.get')->withErrors($validator);
+		return Redirect::route('register.get')->withErrors($validator);
 	} else {
-		return Redirect::to('login.get')->with('register.success', 'Silahkan login menggunakan akun Anda.');
+		return Redirect::route('login.get')->with('register.success', 'Silahkan login menggunakan akun Anda.');
 	}
 
 }));
