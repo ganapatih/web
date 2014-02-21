@@ -6,8 +6,7 @@
 	@section('head')
 	<link rel="stylesheet" href="{{ asset('css/foundation.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/map.css') }}">
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'> 
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<link rel="shortcut icon" href="/favicon.png">
 	@show
@@ -16,7 +15,19 @@
 	<div id="header">
 		<div class="row">
 			<div class="small-12 medium-8 columns">
-				<a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt="Ganapatih"></a>
+				<a href="{{ route('home') }}" id="logo"><img src="{{ asset('img/logo.png') }}" alt="Ganapatih"></a>
+				<div class="divider"></div>
+				<ul>
+					<li>
+						<a href="#">About Us</a>
+					</li>
+					<li>
+						<a href="#">Documentation</a>
+					</li>
+					<li>
+						<a href="#">Contributor</a>
+					</li>
+				</ul>
 			</div>
 			<div class="small-12 medium-4 columns">
 				<div class="text-right">
@@ -31,12 +42,8 @@
 	</div>
 	<script src="{{ asset('js/vendor/jquery.js') }}"></script>
 	<script src="{{ asset('js/foundation.min.js') }}"></script>
-	
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhiBKlzawrAD_L9lIl3SZNW3w6aD5fx8I&sensor=false"></script>
-	<script src="{{ asset('js/map/map.js') }}"></script>
-	<script src="{{ asset('js/map/map-binding.js') }}"></script>
-	
-	
+	@section('footer')
+	@show
 	<script>$(document).foundation();</script>
 </body>
 </html>
