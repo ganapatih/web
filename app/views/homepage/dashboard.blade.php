@@ -77,46 +77,16 @@
 		saya balikin lagi ya
 		*/
 		var POI = {
-			5128 : {
-						"datetime"    : "2014-02-19 15:40:14",
-						"desc"        : "testing",
-						"location"    : [-7.804228,110.42453],
-						"name"        : "hiraq",
-						"phone"       : "81237",
-						"status"      : null,
-						"type_victim" : 1,
-						"unique_key" : 5128	
-					} ,
-			5129 : {
-						"datetime"    : "2014-02-19 15:40:14",
-						"desc"        : "testing",
-						"location"    : [-7.783308,110.410452],
-						"name"        : "hiraq A",
-						"phone"       : "81237",
-						"status"      : null,
-						"type_victim" : 1,
-						"unique_key" : 5129	
-					} ,
-			5130 : {
-						"datetime"    : "2014-02-19 15:40:14",
-						"desc"        : "testing",
-						"location"    : [-7.791812,110.34831],
-						"name"        : "hiraq B",
-						"phone"       : "81237",
-						"status"      : null,
-						"type_victim" : 1,
-						"unique_key" : 5130	
-					} ,
-			5131 : {
+			 
+		 812373 :  {
 						"datetime"    : "2014-02-19 15:40:14",
 						"desc"        : "testing",
 						"location"    : [-7.795384,110.348654],
 						"name"        : "hiraq C",
-						"phone"       : "81237",
+						"phone"       : "812373",
 						"status"      : null,
-						"type_victim" : 1,
-						"unique_key" : 5131	
-					} ,
+						"type_victim" : 1 
+					} 
 
 		};
 
@@ -125,4 +95,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 	<script src="{{ asset('js/map/map.js') }}"></script>
 	<script src="{{ asset('js/map/map-binding.js') }}"></script>	 
+	
+	 <script src="http://localhost:8080/socket.io/socket.io.js"></script> 
+       
 @stop

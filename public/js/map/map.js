@@ -1,5 +1,6 @@
 var RegionalList = {
-	indonesia  : [0,116.015625]
+	indonesia  : [0,116.015625],
+	jogja : [-7.804228,110.40453]
 }
 
 
@@ -8,10 +9,12 @@ var MyMap={
 	_map : false,
 	 initialize :  function () {
         //inisiasi peta indonesia, dengan zoom level 4
-        var laloIndonesia = new google.maps.LatLng(0,116.015625);
+		var pos = RegionalList.jogja;
+        var _center  = new google.maps.LatLng(pos[0],pos[1]);
+		
         var myIndonesia = {
-            zoom: 5,           
-            center: laloIndonesia,
+            zoom: 12,           
+            center: _center,
             panControl: false,
 			zoomControl: false,
 		    mapTypeControl: true,
@@ -20,7 +23,7 @@ var MyMap={
 
 		
         this._map = new google.maps.Map(document.getElementById("the-Map"), myIndonesia);
-		console.log(this._map);
+		 
     }, 
 	
 	 
@@ -45,20 +48,23 @@ var MyMap={
 	putMarker : function( Object ){
 		var that  = this;
 		
-		if(typeof(  POI[Object["unique_key"]]) =='undefined')
-				POI[Object["unique_key"]] = Object;		
-		
-		var marker = new google.maps.Marker({
-			  position: new google.maps.LatLng(Object.location[0],Object.location[1]),
-			  map: that._map,
-			  title: Object.name
-		  });
-		  
-		  
-		 var infowindow = that.renderInfo(Object);
-		 google.maps.event.addListener(marker, 'click', function() {
-			infowindow.open( that._map,marker);
-		  });  
+		if(that._map && typeof(  POI[Object["phone"]]) =='undefined')
+		{
+			POI[Object["phone"]] = Object;		
+			
+			var marker = new google.maps.Marker({
+				  position: new google.maps.LatLng(Object.location[0],Object.location[1]),
+				  map: that._map,
+				  title: Object.name
+			  });
+			  
+			  console.log("put", Object.phone );
+			  
+			 var infowindow = that.renderInfo(Object);
+			 google.maps.event.addListener(marker, 'click', function() {
+				infowindow.open( that._map,marker);
+			  });  
+		  }
 	},
 	
 	

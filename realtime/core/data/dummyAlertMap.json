@@ -1,63 +1,29 @@
 { "data" : [
-	{
-		"lat" : "-7.8015544026482",
-		"lng" : "110.36512255669",
-		"title" : "Korban di Yogyakarta",
-		"description" : "Kota Yogya",
-		"status_darurat" : "merah",
-		"image" : ""
-	},
-	
-	{
-		"lat" : "-7.779956054360403",
-		"lng" : "110.41413187980652",
-		"title" : "Kecelakaan di depan Hotel Sahid Raya Yogyakarta",
-		"description" : "Kecelakaan motor dengan mobil",
-		"status_darurat" : "putih",
-		"image" : ""
-	},
-	
-	{
-		"lat" : "-7.780583228604761",
-		"lng" : "110.41403532028198",
-		"title" : "Kecelakaan di dekat Perpustakaan UAJY Yogyakarta",
-		"description" : "terkena setrum",
-		"image" : ""
-	},
-	
-	{
-		"lat" : "-7.7816667850714865",
-		"lng" : "110.41455030441284",
-		"title" : "Pencurian di Museum Geoteknologi Mineral",
-		"description" : "Pencurian uranium",
-		"status_darurat" : "none",
-		"image" : ""
-	},
-	
-	{
-		"lat" : "-7.78230529543468",
-		"lng" : "110.41457176208496",
-		"title" : "Tawuran pelajar di Kampus Unit II UPN",
-		"description" : "Chaos, buku beterbangan",
-		"status_darurat" : "none",
-		"image" : ""
-	},
-	
-	{
-		"lat" : "-7.779663018399932",
-		"lng" : "110.39278149604797",
-		"title" : "Lubang di jalan Demangan Yogyakarta",
-		"description" : "Berbahaya untuk kendaraan yang melintas",
-		"status_darurat" : "none",
-		"image" : ""
-	},
-	
-	{
-		"lat" : "-7.7829211275042365",
-		"lng" : "110.39462685585022",
-		"title" : "demo anarkis di depan Grand StockWell",
-		"description" : "Chaos, bakar ban dan menyan",
-		"status_darurat" : "none",
-		"image" : ""
-	}
+	  {
+						"datetime"    : "2014-02-19 15:40:14",
+						"desc"        : "testing",
+						"location"    : [-7.804228,110.42453],
+						"name"        : "hiraq",
+						"phone"       : "81237",
+						"status"      : null,
+						"type_victim" : 1 
+					} ,
+		 {
+						"datetime"    : "2014-02-19 15:40:14",
+						"desc"        : "testing",
+						"location"    : [-7.783308,110.410452],
+						"name"        : "hiraq A",
+						"phone"       : "812376",
+						"status"      : null,
+						"type_victim" : 1 	
+					} ,
+			 {
+						"datetime"    : "2014-02-19 15:40:14",
+						"desc"        : "testing",
+						"location"    : [-7.791812,110.34831],
+						"name"        : "hiraq B",
+						"phone"       : "812377",
+						"status"      : null,
+						"type_victim" : 1 
+					}
 ]}
