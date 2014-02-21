@@ -7,7 +7,13 @@ Route::get('/', array('as'=>'home','uses'=>'HomeController@getIndex'));
 login user
  */
 Route::post('login', array('as'=>'login',function(){
-	return Redirect::route('dashboard');
+	
+	if (Auth::attempt(Input::all())) {
+		return Redirect::intended('dashboard');
+	} else {
+		return Redirect::to('login.get')->with('auth.failed', 'Username atau password Anda salah.');
+	}
+
 }));
 
 Route::get('login', array('as' => 'login.get', function() {
