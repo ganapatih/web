@@ -15,3 +15,9 @@ Format version akan menggunakan [Semver](http://semver.org)
 ### Gearman
 
 [Install PHP Gearman Client - PECL](http://gearman.org/getting-started/)
+
+### Mongo
+
+```
+sudo pecl install mongo
+```

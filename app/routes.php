@@ -10,11 +10,46 @@ Route::post('login', array('as'=>'login',function(){
 	return Redirect::route('dashboard');
 }));
 
+Route::get('login', array('as' => 'login.get', function() {
+	return View::make('users/login');
+}));
+
+Route::get('register', array('as' => 'register.get', function() {
+	return View::make('users/register');
+}));
+
+Route::post('register', array('as' => 'register.post', function() {
+
+	/*
+	validasi dulu input fieldnya
+	 */
+	$validator = Validator::make(Input::all(), array(
+		'name' => 'required',
+		'email' => 'required|email',
+		'password' => 'required|min:4'
+	));
+
+	/*
+	jika gagal akan dikembalikan ke 
+	halaman register dengan input sebelumnya
+	+ validasi message
+	 */
+	if ($validator->fails()) {//validasi gagal
+		return Redirect::to('register.get')->withErrors($validator);
+	} else {
+		return Redirect::to('login.get')->with('register.success', 'Silahkan login menggunakan akun Anda.');
+	}
+
+}));
+
 /*
 dashboard sementara ga diprotect -> auth filter
  */
-Route::get('dashboard', array('as'=>'dashboard','uses'=>'HomeController@getDashboard'));
+Route::get('dashboard', array('before' => 'auth','as'=>'dashboard','uses'=>'HomeController@getDashboard'));
 
+/*
+khusus utk api
+ */
 Route::group(array('prefix' => 'api'), function() {
 
 	Route::get('token', array('uses' => 'ApiController@token'));	
