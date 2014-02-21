@@ -18,8 +18,9 @@ var MyMap={
 			  
         };
 
-        this._map = new google.maps.Map(document.getElementById("the-Map"), myIndonesia);
 		
+        this._map = new google.maps.Map(document.getElementById("the-Map"), myIndonesia);
+		console.log(this._map);
     }, 
 	
 	 

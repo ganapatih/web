@@ -1,5 +1,7 @@
  $(document).ready(function(){
-	MyMap.initialize();
+	 
+	 
+	 MyMap.initialize();
 	
 	MyMap.loadMarker();
  

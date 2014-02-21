@@ -9,6 +9,8 @@
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<link rel="shortcut icon" href="/favicon.png">
+	<!--- kalo disini diload, map nya muncul-->
+	<link rel="stylesheet" href="{{ asset('css/map.css') }}">
 	@show
 </head>
 <body>

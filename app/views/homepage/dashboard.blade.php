@@ -1,8 +1,10 @@
 @extends('layouts/master')
 @section('header')
 	@parent
+	<!--- ini tidak di load oom kenapa yah , saya pindah lagi di master -->
 	<link rel="stylesheet" href="{{ asset('css/map.css') }}">
 @stop
+
 @section('content')
 	<div class="row">
 		<div class="small-12 medium-4 columns">
@@ -63,10 +65,17 @@
 			<!-- <iframe width="100%" height="700" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Yogyakarta,+Special+District+of+Yogyakarta,+Indonesia&amp;aq=0&amp;oq=yogyakarta&amp;sll=37.0625,-95.677068&amp;sspn=49.490703,107.138672&amp;ie=UTF8&amp;hq=&amp;hnear=Yogyakarta,+Indonesia&amp;t=m&amp;ll=-7.797228,110.368824&amp;spn=0.119052,0.016994&amp;z=13&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Yogyakarta,+Special+District+of+Yogyakarta,+Indonesia&amp;aq=0&amp;oq=yogyakarta&amp;sll=37.0625,-95.677068&amp;sspn=49.490703,107.138672&amp;ie=UTF8&amp;hq=&amp;hnear=Yogyakarta,+Indonesia&amp;t=m&amp;ll=-7.797228,110.368824&amp;spn=0.119052,0.016994&amp;z=13&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small> -->
 		</div>
 	</div>
+	
+@stop
+@section('footer')
 	<script>
 		//load from DB perseintent
 		// var POI = <?php echo isset($data)?json_encode($data):"{}"; ?>
-
+		
+		/*om POI ini cuma sample kedepan tidak akan seperti ini, jadi JS jangan ditulis disini biar lepas saja
+		bisa jadi akan bangat js file diluar nanti untuk memudahkan managemen file nya,
+		saya balikin lagi ya
+		*/
 		var POI = {
 			5128 : {
 						"datetime"    : "2014-02-19 15:40:14",
@@ -112,14 +121,8 @@
 		};
 
 		</script>
-@stop
-@section('footer')
+
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-	<script src="{{ asset('js/map.js') }}"></script>
-	<script>
-		$(document).ready(function(){
-			MyMap.initialize();
-			MyMap.loadMarker();
-		 });
-	</script>
+	<script src="{{ asset('js/map/map.js') }}"></script>
+	<script src="{{ asset('js/map/map-binding.js') }}"></script>	 
 @stop
