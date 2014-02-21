@@ -2,6 +2,10 @@ body { background: #575757; font-family: 'Source Sans Pro', sans-serif; }
 #header { background: transparent url(../img/head-bckg.jpg) repeat-x top center; height: 75px; padding-top: 9px; margin-bottom: 30px; }
 #header div:last-child { padding-top: 5px; }
 #header a { color: #444; text-shadow: 0 1px 0 rgba(255,255,255,.3); }
+#logo, .divider, #header ul { float: left; }
+.divider { background: url(../img/divider.png) no-repeat top center; width: 2px; height: 65px; margin: -10px 15px 0 15px; }
+#header ul { list-style: none; margin: 7px 0 0 0; }
+#header ul li { display: inline-block; margin: 0 15px; }
 #homepage-content, #homepage-content h2, #homepage-content h4  { color: #FFF; text-shadow: 0 1px 0 rgba(0,0,0,.3); }
 #homepage-content img { margin-top: 70px; }
 #homepage-content p { font-weight: 300; }
