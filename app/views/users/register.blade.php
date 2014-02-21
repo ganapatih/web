@@ -3,7 +3,7 @@
 
 @section('content')
 	<div class="row">
-		<div id="single-form" class="small-12 medium-4 small-centered medium-centered columns">
+		<div id="single-form" class="small-12 medium-6 small-centered medium-centered columns">
 			<div id="login">
 				<h2>Register</h2>
 				<form action="{{ route('register.post') }}" method="POST">
