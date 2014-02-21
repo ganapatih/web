@@ -2,6 +2,7 @@
 composer.lock
 /bootstrap/compiled.php
 /vendor
+app/config/local-hiraq
 composer.phar
 .env.local.php
 .env.php

@@ -2,11 +2,11 @@
 
 class ApiController extends BaseController {
 
-    protected $gearman;
+    protected $gearman;    
 
     public function __construct()
     {
-        $this->gearman = new GearmanClient();
+        $this->gearman = new GearmanClient();        
     }
 
 	public function token()
@@ -35,8 +35,7 @@ class ApiController extends BaseController {
 		send to gearman
 		@TODO : dirapikan menjadi custom lib
 		 */
-        $job = $this->sendToQueue('register', $input);
-
+        $job = $this->sendToQueue('register', $input);        
         return $job;
 	}
 
@@ -53,11 +52,15 @@ class ApiController extends BaseController {
 			'location' => array(Input::get('location'))
 		);
 
+		//nodejs worker
+        $this->sendToQueue('newMarker', $input);
+
 		/*
 		send to gearman
 		@TODO : dirapikan menjadi custom lib
 		 */
-        $job = $this->sendToQueue('korban', $input);
+        $job = $this->sendToQueue('korban', $input);  
+       	$this->sendToQueue('newMarker', $input);
 
         return $job;
 	}
@@ -81,8 +84,9 @@ class ApiController extends BaseController {
 		send to gearman
 		@TODO : dirapikan menjadi custom lib
 		 */
-        $job = $this->sendToQueue('relawan', $input);
-
+        $job = $this->sendToQueue('relawan', $input);       
+        $this->sendToQueue('newMarker', $input);
+        
         return $job;
 	}
 
