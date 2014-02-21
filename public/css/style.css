@@ -23,3 +23,5 @@ body { background: #575757; font-family: 'Source Sans Pro', sans-serif; }
 	box-shadow: 0 3px 3px rgba(0,0,0,.5);
 }
 label { color: #FFF; }
+
+#single-form {background-color: #efefef}

@@ -6,7 +6,7 @@ Route::get('/', array('as'=>'home','uses'=>'HomeController@getIndex'));
 /*
 login user
  */
-Route::post('login', array('as'=>'login',function(){
+Route::post('login', array('as'=>'login.post',function(){
 	
 	if (Auth::attempt(Input::all())) {
 		return Redirect::intended('dashboard');
