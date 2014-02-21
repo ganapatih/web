@@ -16,8 +16,8 @@
 				@endif
 
 				<form action="{{ route('login.post') }}" method="POST">
-					<input type="text" placeholder="email">
-					<input type="password" placeholder="password">
+					<input type="text" placeholder="email" name="email">
+					<input type="password" placeholder="password" name="password">
 					<input type="submit" class="tiny radius button" value="Sign In">
 					<p>
 						<small>doesn't have an account? register 

@@ -27,6 +27,12 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 	protected $hidden = array('password');
 
 	/**
+	 * Fillable attributes to create new user
+	 * @var array
+	 */
+	protected $fillable = array('email', 'password');
+
+	/**
 	 * Get the unique identifier for the user.
 	 *
 	 * @return mixed
@@ -54,6 +60,11 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 	public function getReminderEmail()
 	{
 		return $this->email;
+	}
+
+	public function setPasswordAttribute($val)
+	{
+		$this->attributes['password'] = Hash::make($val);
 	}
 
 }
