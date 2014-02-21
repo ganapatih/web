@@ -51,7 +51,8 @@ Route::post('register', array('as' => 'register.post', function() {
 /*
 dashboard sementara ga diprotect -> auth filter
  */
-Route::get('dashboard', array('before' => 'auth','as'=>'dashboard','uses'=>'HomeController@getDashboard'));
+//Route::get('dashboard', array('before' => 'auth','as'=>'dashboard','uses'=>'HomeController@getDashboard'));
+Route::get('dashboard', array( 'as'=>'dashboard','uses'=>'HomeController@getDashboard'));
 
 /*
 khusus utk api
