@@ -11,7 +11,7 @@ Route::post('login', array('as'=>'login.post',function(){
 	if (Auth::attempt(Input::all())) {
 		return Redirect::intended('dashboard');
 	} else {
-		return Redirect::to('login.get')->with('auth.failed', 'Username atau password Anda salah.');
+		return Redirect::route('login.get')->with('auth.failed', 'Username atau password Anda salah.');
 	}
 
 }));

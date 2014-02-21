@@ -5,6 +5,15 @@
 		<div id="single-form" class="small-12 medium-4 small-centered medium-centered columns">
 			<div id="login">
 				<h2>Sign In</h2>
+
+				@if( Session::has('auth.failed') )
+					<small class="error">{{ Session::get('auth.failed') }}</small>
+				@endif
+
+				@if( Session::has('register.success') )
+					<small class="success label" id="single-notif">{{ Session::get('register.success') }}</small>
+				@endif
+
 				<form action="{{ route('login.post') }}" method="POST">
 					<input type="text" placeholder="email">
 					<input type="password" placeholder="password">

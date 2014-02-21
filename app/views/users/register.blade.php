@@ -16,7 +16,7 @@
 						<small class="error">{{ $errors->first('password') }}</small>
 					@endif
 
-					<input type="submit" class="tiny radius button" value="Sign In">
+					<input type="submit" class="tiny radius button" value="Register">
 					<p>
 						<small>already have an account? sign in 
 							<a href="{{ route('login.get') }}">here</a> 

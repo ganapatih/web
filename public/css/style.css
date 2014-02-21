@@ -25,3 +25,4 @@ body { background: #575757; font-family: 'Source Sans Pro', sans-serif; }
 label { color: #FFF; }
 
 #single-form {background-color: #efefef}
+#single-notif {width: 100%; margin: 5px 0 15px;}
