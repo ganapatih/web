@@ -1,4 +1,5 @@
 @extends('layouts/master')
+@include('elements.modals')
 
 @section('content')
 	<div class="row">
