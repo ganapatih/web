@@ -1,5 +1,7 @@
 <?php
 
+use Ganapatih\Exception\ApiException as ApiException;
+
 class ApiController extends BaseController {
 
     protected $gearman;    
@@ -16,8 +18,7 @@ class ApiController extends BaseController {
 	}
 
 	public function register()
-	{
-
+	{		
 		$this->proceedToken();
 
 		/*
@@ -106,9 +107,8 @@ class ApiController extends BaseController {
 
 	private function proceedToken()
 	{
-		$checkToken = $this->checkToken(Input::get('_token'));
-
-		if (!$checkToken) {
+		$checkToken = $this->checkToken(Input::get('_token'));				
+		if (!$checkToken) {			
 			throw new ApiException('Invalid Token');
 		}
 	}

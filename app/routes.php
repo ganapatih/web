@@ -58,7 +58,7 @@ khusus utk api
 Route::group(array('prefix' => 'api'), function() {
 
 	Route::get('token', array('uses' => 'ApiController@token'));	
-	Route::post('register', array('uses' => 'ApiController@register'));
+	Route::get('register', array('uses' => 'ApiController@register'));
 	Route::post('korban', array('uses' => 'ApiController@korban'));
 	Route::post('relawan', array('uses' => 'ApiController@relawan'));
 
