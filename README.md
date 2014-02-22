@@ -50,7 +50,7 @@ sudo pecl install mongo
 ### TODO
 
 - [x] Api: mobile -> api -> python -> nodejs (async)
-- [ ] Web: user register & login
+- [x] Web: user register & login
 - [ ] Unit Test
 - [ ] Verifikasi report dengan user terdekat
 - [ ] Mengambil data suatu wilayah + data usernya
