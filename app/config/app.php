@@ -108,6 +108,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Jenssegers\Mongodb\MongodbServiceProvider',
 		'Jenssegers\Mongodb\Auth\ReminderServiceProvider',
+		'Ganapatih\GanapatihServiceProvider'
 	),
 
 	/*

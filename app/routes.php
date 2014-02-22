@@ -8,7 +8,7 @@ login user
  */
 Route::post('login', array('as'=>'login.post',function(){
 	
-	if (Auth::attempt(Input::all())) {
+	if (Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password')))) {
 		return Redirect::intended('dashboard');
 	} else {
 		return Redirect::route('login.get')->with('auth.failed', 'Username atau password Anda salah.');
@@ -18,6 +18,11 @@ Route::post('login', array('as'=>'login.post',function(){
 
 Route::get('login', array('as' => 'login.get', function() {
 	return View::make('users/login');
+}));
+
+Route::get('logout', array('as' => 'logout.get', function() {
+	Auth::logout();
+	return Redirect::route('login.get');
 }));
 
 Route::get('register', array('as' => 'register.get', function() {
@@ -58,7 +63,7 @@ khusus utk api
 Route::group(array('prefix' => 'api'), function() {
 
 	Route::get('token', array('uses' => 'ApiController@token'));	
-	Route::get('register', array('uses' => 'ApiController@register'));
+	Route::post('register', array('uses' => 'ApiController@register'));
 	Route::post('korban', array('uses' => 'ApiController@korban'));
 	Route::post('relawan', array('uses' => 'ApiController@relawan'));
 

@@ -8,6 +8,7 @@ class ApiController extends BaseController {
 
     public function __construct()
     {
+    	$this->beforeFilter('ganapatih.filter.token', array('except' => 'token'));
         $this->gearman = new GearmanClient();        
     }
 
@@ -19,8 +20,6 @@ class ApiController extends BaseController {
 
 	public function register()
 	{		
-		$this->proceedToken();
-
 		/*
 		setup data
 		 */
@@ -41,10 +40,7 @@ class ApiController extends BaseController {
 	}
 
 	public function korban()
-	{
-
-		$this->proceedToken();		
-
+	{		
 		$input = array(
 			'name' => Input::get('name'),
 			'phone' => Input::get('phone'),
@@ -67,10 +63,7 @@ class ApiController extends BaseController {
 	}
 
 	public function relawan()
-	{
-
-		$this->proceedToken();
-		
+	{		
 		$input = array(
 			'name' => Input::get('name'),
 			'phone' => Input::get('phone'),
@@ -89,29 +82,7 @@ class ApiController extends BaseController {
         $this->sendToQueue('newMarker', $input);
         
         return $job;
-	}
-
-	private function checkToken($token)
-	{
-		if (Session::has('__token_api')) {
-
-			if ($token == Session::get('__token_api')) {
-				Session::flush();
-				return true;
-			}
-
-		}
-
-		return false;
-	}
-
-	private function proceedToken()
-	{
-		$checkToken = $this->checkToken(Input::get('_token'));				
-		if (!$checkToken) {			
-			throw new ApiException('Invalid Token');
-		}
-	}
+	}		
 
     // TODO: Ini seharusnya dibikin jadi Queue::push()
     private function sendToQueue($name, $workload)

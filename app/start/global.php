@@ -50,11 +50,7 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 
 App::error(function(Exception $exception, $code)
 {
-	Log::error($exception);
-});
-
-App::error(function(ApiException $exception) {	
-	return Response::json(array('status' => 'error', 'message' => $exception->getMessage()));
+	Log::error($exception);	
 });
 
 /*

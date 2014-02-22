@@ -8,7 +8,7 @@ class HomeController extends BaseController {
 	}
 
 	public function getDashboard()
-	{
+	{		
 		return View::make('homepage.dashboard');
 	}
 	
