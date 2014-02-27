@@ -1,5 +1,5 @@
 *.log
-composer.lock
+#composer.lock
 /bootstrap/compiled.php
 /vendor
 app/config/local-hiraq
