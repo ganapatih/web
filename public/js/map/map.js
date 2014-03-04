@@ -46,7 +46,10 @@ var MyMap={
 	  },
   
 	putMarker : function( Object ){
+		
 		var that  = this;
+		console.log(that._map);
+		console.log(typeof(  POI[Object["phone"]]));
 		
 		if(that._map && typeof(  POI[Object["phone"]]) =='undefined')
 		{
@@ -57,8 +60,9 @@ var MyMap={
 				  map: that._map,
 				  title: Object.name
 			  });
-			  
-			  console.log("put", Object.phone );
+			  			  
+			  //console.log("put", Object.phone );
+			  //console.log('location', Object.location);
 			  
 			 var infowindow = that.renderInfo(Object);
 			 google.maps.event.addListener(marker, 'click', function() {

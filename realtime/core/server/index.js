@@ -29,7 +29,8 @@ function setup(app, config) {
 		var worker = gearmanode.worker();
 	
 		worker.addFunction('newMarker', function (job) {
-			mapUpdate.emit('newMarker', JSON.parse(job.payload.toString()));
+			//@TODO: bug detected! double submit
+			mapUpdate.emit('newMarkerMap', JSON.parse(job.payload.toString()));
 			job.workComplete('done');
 		});
 				

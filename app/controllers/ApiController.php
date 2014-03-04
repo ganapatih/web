@@ -4,12 +4,14 @@ use Ganapatih\Exception\ApiException as ApiException;
 
 class ApiController extends BaseController {
 
-    protected $gearman;    
+    protected $gearman;
+	protected $gearmanNode;
 
     public function __construct()
     {
     	$this->beforeFilter('ganapatih.filter.token', array('except' => 'token'));
-        $this->gearman = new GearmanClient();        
+        $this->gearman = new GearmanClient();
+		$this->gearmanNode = new GearmanClient();
     }
 
 	public function token()
@@ -56,8 +58,10 @@ class ApiController extends BaseController {
 		send to gearman
 		@TODO : dirapikan menjadi custom lib
 		 */
-        $job = $this->sendToQueue('korban', $input);  
-       	$this->sendToQueue('newMarker', $input);
+        $job = $this->sendToQueue('korban', $input);
+		
+		$input['location'] = explode(',', Input::get('location'));
+       	$this->sendToNode('newMarker', $input);
 
         return $job;
 	}
@@ -78,11 +82,42 @@ class ApiController extends BaseController {
 		send to gearman
 		@TODO : dirapikan menjadi custom lib
 		 */
-        $job = $this->sendToQueue('relawan', $input);       
-        $this->sendToQueue('newMarker', $input);
+        $job = $this->sendToQueue('relawan', $input);
+		
+		$input['location'] = explode(',', Input::get('location'));
+        $this->sendToNode('newMarker', $input);
         
         return $job;
-	}		
+	}
+	
+	private function sendToNode($name, $workload)
+	{
+		$host = Config::get('queue.connections.gearman.host');
+        $port = Config::get('queue.connections.gearman.port');
+
+        try {
+            $this->gearmanNode->addServer($host, $port);
+            $job = $this->gearmanNode->doBackground($name, json_encode($workload));
+
+            if ($job)
+                return array('success' => 1);
+        }
+        catch (GearmanException $e)
+        {
+            Log::error($e);
+            return array('error', $e->getMessage());
+        }
+        catch (ErrorException $e)
+        {
+            Log::error($e);
+            return array('error', $e->getMessage());
+        }
+        catch (\Exception $e)
+        {
+            Log::error($e);
+            return array('error', $e->getMessage());
+        }
+	}
 
     // TODO: Ini seharusnya dibikin jadi Queue::push()
     private function sendToQueue($name, $workload)
