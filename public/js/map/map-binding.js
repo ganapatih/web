@@ -4,8 +4,10 @@
 	
 	MyMap.loadMarker();
 	
-	//var mapUpdate = io.connect('http://localhost:8080/mapUpdate');	
-	var mapUpdate = io.connect( 'http://ganapatih.dev:8080/mapUpdate');
+	//var mapUpdate = io.connect('http://localhost:8080/mapUpdate');
+    var ioUrl = socketUrl + 'mapUpdate';
+    
+	var mapUpdate = io.connect(ioUrl);
    
 	mapUpdate.on('connect', function () {
 	 
@@ -16,8 +18,7 @@
             /*
              * fix bug double data
              */
-            if (data.location.length == 2) {
-               console.log('put marker');
+            if (data.location.length == 2) {               
                MyMap.putMarker(data);
             }
 			
