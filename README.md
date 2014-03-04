@@ -54,7 +54,7 @@ sudo pecl install mongo
 ### ForeverJS
 
 ```
-npm install -g foreverjs
+npm install -g forever
 ```
 
 ### Realtime Runner
