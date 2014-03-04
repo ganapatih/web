@@ -19,7 +19,7 @@
 			<div class="small-12 medium-8 columns">
 				<a href="{{ route('home') }}" id="logo"><img src="{{ asset('img/logo.png') }}" alt="Ganapatih"></a>
 				<div class="divider"></div>
-				<ul>
+				<!--<ul>
 					<li>
 						<a href="#">About Us</a>
 					</li>
@@ -29,11 +29,19 @@
 					<li>
 						<a href="#">Contributor</a>
 					</li>
-				</ul>
+				</ul>-->
 			</div>
 			<div class="small-12 medium-4 columns">
 				<div class="text-right">
-					<a href="#" data-reveal-id="login" data-reveal>login</a> | <a href="#" data-reveal-id="register" data-reveal>register</a>
+				
+					@if(isset($is_login))
+						<a href="{{ route('dashboard') }}">dashboard</a> |
+						<a href="{{ route('logout.get') }}">logout</a>
+					@else
+						<a href="#" data-reveal-id="login" data-reveal>login</a> |
+						<a href="#" data-reveal-id="register" data-reveal>register</a>
+					@endif
+															
 				</div>
 			</div>
 		</div>
