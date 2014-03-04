@@ -48,8 +48,8 @@ var MyMap={
 	putMarker : function( Object ){
 		
 		var that  = this;
-		console.log(that._map);
-		console.log(typeof(  POI[Object["phone"]]));
+		//console.log(that._map);
+		//console.log(typeof(  POI[Object["phone"]]));
 		
 		if(that._map && typeof(  POI[Object["phone"]]) =='undefined')
 		{
