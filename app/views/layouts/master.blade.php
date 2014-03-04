@@ -34,7 +34,7 @@
 			<div class="small-12 medium-4 columns">
 				<div class="text-right">
 				
-					@if(isset($is_login))
+					@if(isset($is_login) && true == $is_login)
 						<a href="{{ route('dashboard') }}">dashboard</a> |
 						<a href="{{ route('logout.get') }}">logout</a>
 					@else
