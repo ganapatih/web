@@ -46,11 +46,3 @@ Format version akan menggunakan [Semver](http://semver.org)
 ```
 sudo pecl install mongo
 ```
-
-### TODO
-
-- [x] Api: mobile -> api -> python -> nodejs (async)
-- [x] Web: user register & login
-- [ ] Unit Test
-- [ ] Verifikasi report dengan user terdekat
-- [ ] Mengambil data suatu wilayah + data usernya
