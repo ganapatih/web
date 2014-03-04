@@ -1,4 +1,5 @@
 *.log
+*.komodoproject
 #composer.lock
 /bootstrap/compiled.php
 /vendor
