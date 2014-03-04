@@ -2,8 +2,8 @@
 	<h2>Sign In</h2>
 		
 	{{ Form::open(array('route' => 'login.post')) }}
-		<input type="text" placeholder="email">
-		<input type="password" placeholder="password">
+		<input type="text" placeholder="email" name="email">
+		<input type="password" placeholder="password" name="password">
 		<input type="submit" class="tiny radius expand button" value="Sign In">
 		<p>
 			<small>doesn't have an account? register 
