@@ -4,9 +4,8 @@
 	
 	MyMap.loadMarker();
 	
-	//var mapUpdate = io.connect('http://localhost:8080/mapUpdate');
-	
-	var mapUpdate = io.connect('http://ganapatih.tulisanhiraq.net:8080/mapUpdate');
+	//var mapUpdate = io.connect('http://localhost:8080/mapUpdate');	
+	var mapUpdate = io.connect( socketUrl + '/mapUpdate');
 
 	mapUpdate.on('connect', function () {
 	 

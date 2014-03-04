@@ -71,9 +71,11 @@
 	
 	<script type="text/javascript">
 		var socketUrl = '<?php echo ganapatih_port(8080); ?>';
+		var POI = {};
 	</script>
 	
-	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>	
+	<script src="<?php echo ganapatih_port(8080); ?>socket.io/socket.io.js"></script>
 	<script src="{{ asset('js/map/map.js') }}"></script>
 	<script src="{{ asset('js/map/map-binding.js') }}"></script>	 	
        
