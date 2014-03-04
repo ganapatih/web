@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "c1a3167af84fd39586c337eba968f875",
+    "hash": "dc76e88e2f21e665733987ac30f98da0",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -178,16 +178,16 @@
         },
         {
             "name": "jenssegers/mongodb",
-            "version": "v1.1.3",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/Laravel-MongoDB.git",
-                "reference": "b6250367fb4a3b818c42df75df033c2cfa47564e"
+                "reference": "b23b59ee76c07b60f7e0e11400304a55a3c2ca3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/Laravel-MongoDB/zipball/b6250367fb4a3b818c42df75df033c2cfa47564e",
-                "reference": "b6250367fb4a3b818c42df75df033c2cfa47564e",
+                "url": "https://api.github.com/repos/jenssegers/Laravel-MongoDB/zipball/b23b59ee76c07b60f7e0e11400304a55a3c2ca3a",
+                "reference": "b23b59ee76c07b60f7e0e11400304a55a3c2ca3a",
                 "shasum": ""
             },
             "require": {
@@ -226,7 +226,7 @@
                 "mongo",
                 "mongodb"
             ],
-            "time": "2014-01-13 16:03:33"
+            "time": "2014-03-04 10:12:34"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -278,16 +278,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v4.1.22",
+            "version": "v4.1.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a18a892c9d768464249baa1d16117fe52e0a7004"
+                "reference": "054c1a29aaf537c6c6ca7e7804375c671eddcaaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a18a892c9d768464249baa1d16117fe52e0a7004",
-                "reference": "a18a892c9d768464249baa1d16117fe52e0a7004",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/054c1a29aaf537c6c6ca7e7804375c671eddcaaf",
+                "reference": "054c1a29aaf537c6c6ca7e7804375c671eddcaaf",
                 "shasum": ""
             },
             "require": {
@@ -391,7 +391,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-02-20 15:13:32"
+            "time": "2014-02-28 22:07:47"
         },
         {
             "name": "monolog/monolog",
@@ -552,16 +552,16 @@
         },
         {
             "name": "patchwork/utf8",
-            "version": "v1.1.18",
+            "version": "v1.1.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
-                "reference": "66a936cc633fe13378c91f81030d5193be968480"
+                "reference": "aea0de833cba7cf2c25239be71f2787edaee36d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/66a936cc633fe13378c91f81030d5193be968480",
-                "reference": "66a936cc633fe13378c91f81030d5193be968480",
+                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/aea0de833cba7cf2c25239be71f2787edaee36d5",
+                "reference": "aea0de833cba7cf2c25239be71f2787edaee36d5",
                 "shasum": ""
             },
             "require": {
@@ -599,29 +599,32 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2014-02-02 17:09:49"
+            "time": "2014-03-01 20:01:07"
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "0.3.5",
+            "version": "0.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "fe3765fe1773c9d62985d05d5b5da24c921c4bd0"
+                "reference": "0ea31d9b65d49a8661e93bec19f44e989bd34c69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/fe3765fe1773c9d62985d05d5b5da24c921c4bd0",
-                "reference": "fe3765fe1773c9d62985d05d5b5da24c921c4bd0",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/0ea31d9b65d49a8661e93bec19f44e989bd34c69",
+                "reference": "0ea31d9b65d49a8661e93bec19f44e989bd34c69",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.0.0"
             },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "1.*"
+            },
             "suggest": {
                 "ext-gmp": "Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.",
                 "ext-mcrypt": "Install the Mcrypt extension in order to speed up a wide variety of cryptographic operations.",
-                "pear-pear/PHP_Compat": "Install PHP_Compat to get phpseclib working on PHP >= 4.3.3."
+                "pear-pear/PHP_Compat": "Install PHP_Compat to get phpseclib working on PHP < 4.3.3."
             },
             "type": "library",
             "extra": {
@@ -634,7 +637,8 @@
                     "Crypt": "phpseclib/",
                     "File": "phpseclib/",
                     "Math": "phpseclib/",
-                    "Net": "phpseclib/"
+                    "Net": "phpseclib/",
+                    "System": "phpseclib/"
                 },
                 "files": [
                     "phpseclib/Crypt/Random.php"
@@ -652,6 +656,21 @@
                     "name": "Jim Wigginton",
                     "email": "terrafrost@php.net",
                     "role": "Lead Developer"
+                },
+                {
+                    "name": "Patrick Monnerat",
+                    "email": "pm@datasphere.ch",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Andreas Fischer",
+                    "email": "bantu@phpbb.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Hans-Jürgen Petrich",
+                    "email": "petrich@tronic-media.com",
+                    "role": "Developer"
                 }
             ],
             "description": "PHP Secure Communications Library - Pure-PHP implementations of RSA, AES, SSH2, SFTP, X.509 etc.",
@@ -661,6 +680,7 @@
                 "aes",
                 "asn.1",
                 "asn1",
+                "blowfish",
                 "crypto",
                 "cryptography",
                 "encryption",
@@ -670,10 +690,11 @@
                 "signature",
                 "signing",
                 "ssh",
+                "twofish",
                 "x.509",
                 "x509"
             ],
-            "time": "2013-06-08 17:40:39"
+            "time": "2014-02-28 16:05:05"
         },
         {
             "name": "predis/predis",
@@ -845,7 +866,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Chris Corbyn"
@@ -1597,12 +1620,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "7b4d01a928fb1a2c792f8f6659ea7316d14ca1c9"
+                "reference": "eeb39d19eb0a53a6b4be95b824fba872ed0856c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/7b4d01a928fb1a2c792f8f6659ea7316d14ca1c9",
-                "reference": "7b4d01a928fb1a2c792f8f6659ea7316d14ca1c9",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/eeb39d19eb0a53a6b4be95b824fba872ed0856c7",
+                "reference": "eeb39d19eb0a53a6b4be95b824fba872ed0856c7",
                 "shasum": ""
             },
             "require": {
@@ -1635,7 +1658,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2014-02-06 22:17:25"
+            "time": "2014-03-03 21:12:07"
         },
         {
             "name": "mockery/mockery",
@@ -1643,12 +1666,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/padraic/mockery.git",
-                "reference": "619f304b0ebc52489f11b47e88c3c17f95bf9958"
+                "reference": "6a6fc18508e270cd5a5acaee7492e4e4a303fce6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/619f304b0ebc52489f11b47e88c3c17f95bf9958",
-                "reference": "619f304b0ebc52489f11b47e88c3c17f95bf9958",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/6a6fc18508e270cd5a5acaee7492e4e4a303fce6",
+                "reference": "6a6fc18508e270cd5a5acaee7492e4e4a303fce6",
                 "shasum": ""
             },
             "require": {
@@ -1701,7 +1724,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2014-02-17 21:56:53"
+            "time": "2014-02-26 10:59:49"
         }
     ],
     "aliases": [
