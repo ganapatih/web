@@ -1,6 +1,7 @@
 <div id="login" class="tiny reveal-modal" data-reveal>
 	<h2>Sign In</h2>
-	<form action="{{ route('login.post') }}" method="POST">
+		
+	{{ Form::open(array('route' => 'login.post')) }}
 		<input type="text" placeholder="email">
 		<input type="password" placeholder="password">
 		<input type="submit" class="tiny radius expand button" value="Sign In">
@@ -9,12 +10,14 @@
 				<a href="#" data-reveal-id="register" data-reveal>here</a> 
 			</small>
 		</p>
-	</form>
+	{{ Form::close() }}
+	
 	<a class="close-reveal-modal">&#215;</a>
 </div>
 <div id="register" class="tiny reveal-modal" data-reveal>
 	<h2>Register</h2>
-	<form action="{{ route('register.post') }}" method="POST">
+			
+	{{ Form::open(array('route' => 'register.post')) }}
 		<input type="text" placeholder="email" name="email">
 		<input type="password" placeholder="password" name="password">
 		<input type="submit" class="tiny radius expand button" value="Register">
@@ -24,6 +27,7 @@
 				<a href="#" data-reveal-id="login" data-reveal>here</a> 
 			</small>
 		</p>
-	</form>
+	{{ Form::close() }}
+	
 	<a class="close-reveal-modal">&#215;</a>
 </div>

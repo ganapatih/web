@@ -35,7 +35,7 @@ Route::post('register', array('as' => 'register.post', function() {
 	validasi dulu input fieldnya
 	 */
 	$validator = Validator::make(Input::all(), array(		
-		'email' => 'required|email',
+		'email' => 'required|email|unique:users,email',
 		'password' => 'required|min:4'
 	));
 
