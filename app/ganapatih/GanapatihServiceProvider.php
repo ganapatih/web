@@ -25,6 +25,8 @@ class GanapatihServiceProvider extends ServiceProvider {
 	public function boot() 
 	{
 
+		require_once app_path().'/ganapatih/helpers.php';		
+		
 		//custom listeners
 		$this->setCustomExceptionListener();
 

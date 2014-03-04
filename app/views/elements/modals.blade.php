@@ -15,8 +15,8 @@
 <div id="register" class="tiny reveal-modal" data-reveal>
 	<h2>Register</h2>
 	<form action="{{ route('register.post') }}" method="POST">
-		<input type="text" placeholder="email">
-		<input type="password" placeholder="password">
+		<input type="text" placeholder="email" name="email">
+		<input type="password" placeholder="password" name="password">
 		<input type="submit" class="tiny radius expand button" value="Register">
 		<p>
 			<small>

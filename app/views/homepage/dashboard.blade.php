@@ -68,34 +68,13 @@
 	
 @stop
 @section('footer')
-	<script>
-		//load from DB perseintent
-		// var POI = <?php echo isset($data)?json_encode($data):"{}"; ?>
-		
-		/*om POI ini cuma sample kedepan tidak akan seperti ini, jadi JS jangan ditulis disini biar lepas saja
-		bisa jadi akan bangat js file diluar nanti untuk memudahkan managemen file nya,
-		saya balikin lagi ya
-		*/
-		var POI = {
-			 
-		 812373 :  {
-						"datetime"    : "2014-02-19 15:40:14",
-						"desc"        : "testing",
-						"location"    : [-7.795384,110.348654],
-						"name"        : "hiraq C",
-						"phone"       : "812373",
-						"status"      : null,
-						"type_victim" : 1 
-					} 
-
-		};
-
-		</script>
-
+	
+	<script type="text/javascript">
+		var socketUrl = '<?php echo ganapatih_port(8080); ?>';
+	</script>
+	
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 	<script src="{{ asset('js/map/map.js') }}"></script>
-	<script src="{{ asset('js/map/map-binding.js') }}"></script>	 
-	
-	 <script src="http://localhost:8080/socket.io/socket.io.js"></script> 
+	<script src="{{ asset('js/map/map-binding.js') }}"></script>	 	
        
 @stop

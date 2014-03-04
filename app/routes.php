@@ -47,6 +47,7 @@ Route::post('register', array('as' => 'register.post', function() {
 	if ($validator->fails()) {//validasi gagal
 		return Redirect::route('register.get')->withErrors($validator);
 	} else {
+		User::create(Input::all());
 		return Redirect::route('login.get')->with('register.success', 'Silahkan login menggunakan akun Anda.');
 	}
 
