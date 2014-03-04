@@ -46,3 +46,21 @@ Format version akan menggunakan [Semver](http://semver.org)
 ```
 sudo pecl install mongo
 ```
+
+### NodeJS
+
+[Install NodeJS WithOut Sudo](https://gist.github.com/isaacs/579814#file-only-git-all-the-way-sh)
+
+### ForeverJS
+
+```
+npm install -g foreverjs
+```
+
+### Realtime Runner
+
+```
+cd realtime
+npm install
+forever start /path/to/ganapatih/web/realtime/index.js
+```
