@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => true,
+	'debug' => false,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => 'http://ganapatih.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key' => 'j1ACf9g04ldvxSmbIrD9H9m6nU5w6X7J',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -106,7 +106,9 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-
+		'Jenssegers\Mongodb\MongodbServiceProvider',
+		'Jenssegers\Mongodb\Auth\ReminderServiceProvider',
+		'Ganapatih\GanapatihServiceProvider'
 	),
 
 	/*
@@ -172,7 +174,7 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-
+        'Token'           => 'Ganapatih\Facade\Token'
 	),
 
 );

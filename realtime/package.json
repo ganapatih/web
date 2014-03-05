@@ -1,0 +1,6 @@
+{
+    "dependencies": {
+        "socket.io": "*",
+		"gearmanode": "*"
+    }
+}

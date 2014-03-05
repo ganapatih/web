@@ -1,2 +1,15 @@
-composer.lock
-vendor
+*.log
+*.komodoproject
+#composer.lock
+/bootstrap/compiled.php
+/vendor
+app/config/local-hiraq
+app/config/hiraq
+composer.phar
+.env.local.php
+.env.php
+.DS_Store
+Thumbs.db
+
+realtime/node_modules
+.grunt

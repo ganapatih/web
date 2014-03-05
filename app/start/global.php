@@ -1,5 +1,7 @@
 <?php
 
+use Ganapatih\Exception\ApiException as ApiException;
+
 /*
 |--------------------------------------------------------------------------
 | Register The Laravel Class Loader
@@ -48,7 +50,7 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 
 App::error(function(Exception $exception, $code)
 {
-	Log::error($exception);
+	Log::error($exception);	
 });
 
 /*

@@ -58,7 +58,13 @@ return array(
 		'redis' => array(
 			'driver' => 'redis',
 			'queue'  => 'default',
-		),
+        ),
+
+        'gearman' => array(
+            'driver' => 'gearman',
+            'host'   => 'localhost',
+            'port'   => 4730,
+        ),
 
 	),
 

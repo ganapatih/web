@@ -1,0 +1,29 @@
+{ "data" : [
+	  {
+						"datetime"    : "2014-02-19 15:40:14",
+						"desc"        : "testing",
+						"location"    : [-7.804228,110.42453],
+						"name"        : "hiraq",
+						"phone"       : "81237",
+						"status"      : null,
+						"type_victim" : 1 
+					} ,
+		 {
+						"datetime"    : "2014-02-19 15:40:14",
+						"desc"        : "testing",
+						"location"    : [-7.783308,110.410452],
+						"name"        : "hiraq A",
+						"phone"       : "812376",
+						"status"      : null,
+						"type_victim" : 1 	
+					} ,
+			 {
+						"datetime"    : "2014-02-19 15:40:14",
+						"desc"        : "testing",
+						"location"    : [-7.791812,110.34831],
+						"name"        : "hiraq B",
+						"phone"       : "812377",
+						"status"      : null,
+						"type_victim" : 1 
+					}
+]}
