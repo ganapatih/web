@@ -4,6 +4,7 @@ use Ganapatih\Exception\ApiException;
 
 use Input;
 use Session;
+use Token;
 
 class ApiTokenFilter {
 
@@ -14,23 +15,15 @@ class ApiTokenFilter {
 	{
 		$checkToken = $this->checkToken(Input::get('_token'));				
 		if (!$checkToken) {	
-			Session::flush();				
+			Token::delete(Input::get('_token'));
 			throw new ApiException('Invalid Token');
 		}
 	}
 
 	private function checkToken($token)
 	{
-		if (Session::has('__token_api')) {
-
-			if ($token == Session::get('__token_api')) {
-				Session::flush();
-				return true;
-			}
-
-		}
-
-		return false;
+		$check = Token::isRegistered($token);
+		return $check;
 	}	
 
 }

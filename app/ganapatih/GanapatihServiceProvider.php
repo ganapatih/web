@@ -5,6 +5,7 @@ use Ganapatih\Exception\MongoException;
 use Ganapatih\Exception\GearmanException;
 
 use Ganapatih\Filter\ApiTokenFilter;
+use Ganapatih\Token;
 
 use Illuminate\Support\ServiceProvider;
 use App;
@@ -53,9 +54,18 @@ class GanapatihServiceProvider extends ServiceProvider {
 	{
 		$this->app->bind('ganapatih.ioc.apitoken', function() {
 			return new ApiTokenFilter;
-		});		
+		});
+		
+		$this->app->bind('ganapatih.ioc.token', function() {
+			return new Token;
+		});
 
 		$this->setCustomFilterHandler();
+	}
+	
+	public function providers()
+	{
+		return array('ganapatih.ioc.apitoken', 'ganapatih.ioc.token');
 	}
 
 	private function setCustomExceptionListener()

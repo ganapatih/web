@@ -16,8 +16,13 @@ class ApiController extends BaseController {
 
 	public function token()
 	{
-		Session::put('__token_api', base64_encode(time()));
-		return Response::json(array('_token' => Session::get('__token_api')));
+		/*
+		 * setup token
+		 */
+		$token = base64_encode(time());
+		Token::push($token);
+		
+		return Response::json(array('_token' => $token));
 	}
 
 	public function register()
