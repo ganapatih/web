@@ -38,6 +38,8 @@ class ApiController extends BaseController {
 			'gcmid' => Input::get('gcmId')
 		);
 
+		Log::info('register: '.json_encode($input));
+		
 		/*
 		send to gearman
 		@TODO : dirapikan menjadi custom lib
@@ -56,6 +58,8 @@ class ApiController extends BaseController {
 			'location' => array(Input::get('location'))
 		);
 
+		Log::info('korban: '.json_encode($input));
+		
 		//nodejs worker
         $this->sendToQueue('newMarker', $input);
 
@@ -83,6 +87,8 @@ class ApiController extends BaseController {
 			'location' => array(Input::get('location'))
 		);
 
+		Log::info('relawan: '.json_encode($input));
+		
 		/*
 		send to gearman
 		@TODO : dirapikan menjadi custom lib

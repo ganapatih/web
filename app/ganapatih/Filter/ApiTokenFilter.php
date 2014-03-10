@@ -13,9 +13,9 @@ class ApiTokenFilter {
 	 */
 	public function filter($route, $request)
 	{
-		$checkToken = $this->checkToken(Input::get('_token'));				
+		$checkToken = $this->checkToken(trim(Input::get('_token')));				
 		if (!$checkToken) {	
-			Token::delete(Input::get('_token'));
+			Token::delete(trim(Input::get('_token')));
 			throw new ApiException('Invalid Token');
 		}
 	}
