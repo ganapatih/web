@@ -14,6 +14,7 @@ class ApiTokenFilter {
 	 */
 	public function filter($route, $request)
 	{
+		Log::info('all_input : '. json_encode(Input::all()));
 		Log::info('token: '.Input::get('_token'));
 		$checkToken = $this->checkToken(trim(Input::get('_token')));				
 		if (!$checkToken) {	
