@@ -20,7 +20,7 @@ class ApiTokenFilter {
 		//	Token::delete(trim(Input::get('_token')));
 		//	throw new ApiException('Invalid Token');
 		//}
-		return true;
+		//return true;
 	}
 
 	private function checkToken($token)
