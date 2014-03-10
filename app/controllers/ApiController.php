@@ -36,9 +36,7 @@ class ApiController extends BaseController {
 			'email' => Input::get('email'),
 			'datetime' => date('Y-m-d H:i:s'),
 			'gcmid' => Input::get('gcmId')
-		);
-
-		Log::info('register: '.json_encode($input));
+		);		
 		
 		/*
 		send to gearman
@@ -56,9 +54,7 @@ class ApiController extends BaseController {
 			'datetime' => date('Y-m-d H:i:s'),
 			'type_victim' => 0,
 			'location' => array(Input::get('location'))
-		);
-
-		Log::info('korban: '.json_encode($input));
+		);		
 		
 		//nodejs worker
         $this->sendToQueue('newMarker', $input);
@@ -85,9 +81,7 @@ class ApiController extends BaseController {
 			'status' => Input::get('keadaan'),
 			'type_victim' => 1,
 			'location' => array(Input::get('location'))
-		);
-
-		Log::info('relawan: '.json_encode($input));
+		);		
 		
 		/*
 		send to gearman
