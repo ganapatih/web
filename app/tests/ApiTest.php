@@ -27,7 +27,7 @@ class ApiTest extends TestCase {
      */
     function it_able_to_register($token)
     {
-        $response = $this->call('POST', 'api/korban', ['_token' => $token]);
+        $response = $this->call('POST', 'api/register', array('_token' => $token));
 
         $this->assertResponseOk();
 
@@ -44,8 +44,7 @@ class ApiTest extends TestCase {
      */
     function it_able_to_post_korban($token)
     {
-        // $response = $this->call('POST', 'api/korban', ['_token' => $token]);
-        $response = $this->call('POST', 'api/korban', ['_token' => $token]);
+        $response = $this->call('POST', 'api/korban', array('_token' => $token));
 
         $this->assertResponseOk();
 
@@ -62,7 +61,7 @@ class ApiTest extends TestCase {
      */
     function it_able_to_post_relawan($token)
     {
-        $response = $this->call('POST', 'api/relawan', ['_token' => $token]);
+        $response = $this->call('POST', 'api/relawan', array('_token' => $token));
 
         $this->assertResponseOk();
 
