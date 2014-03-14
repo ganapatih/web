@@ -1,20 +1,21 @@
 <?php
 
-class HomeController extends BaseController {
-	
-	public function __construct()
-	{
-		View::share('is_login', Auth::check());
-	}
+class HomeController extends BaseController
+{
 
-	public function getIndex()
-	{
-		return View::make('homepage.index');
-	}
+    public function __construct()
+    {
+        View::share('is_login', Auth::check());
+    }
 
-	public function getDashboard()
-	{		
-		return View::make('homepage.dashboard');
-	}
-	
+    public function getIndex()
+    {
+        return View::make('homepage.index');
+    }
+
+    public function getDashboard()
+    {
+        return View::make('homepage.dashboard');
+    }
+
 }
