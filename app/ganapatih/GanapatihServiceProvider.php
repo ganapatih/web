@@ -13,75 +13,77 @@ use Response;
 use View;
 use Route;
 
-class GanapatihServiceProvider extends ServiceProvider {
+class GanapatihServiceProvider extends ServiceProvider
+{
 
-	protected $defer = false;
+    protected $defer = false;
 
-	/**
-	 * Bootstrap process
-	 * -> register custom exception handler
-	 * 
-	 * @return void
-	 */
-	public function boot() 
-	{
+    /**
+     * Bootstrap process
+     * -> register custom exception handler
+     *
+     * @throws Exception\GearmanException
+     * @throws Exception\MongoException
+     * @return void
+     */
+    public function boot()
+    {
+        require_once app_path() . '/ganapatih/helpers.php';
 
-		require_once app_path().'/ganapatih/helpers.php';		
-		
-		//custom listeners
-		$this->setCustomExceptionListener();
+        // Custom listeners
+        $this->setCustomExceptionListener();
 
-		/*
-		cek apakah pecl mongo sudah terinstall atau tidak
-		 */
-		if (!class_exists('MongoClient')) {
-			throw new MongoException('Please install pecl mongo to use this application.');
-		}
+        /*
+        Cek apakah pecl mongo sudah terinstall atau tidak
+         */
+        if (!class_exists('MongoClient')) {
+            throw new MongoException('Please install pecl mongo to use this application.');
+        }
 
-		/*
-		cek apakah pecl gearman terinstall atau belum
-		 */
-		if (!class_exists('GearmanClient')) {
-			throw new GearmanException('Please install pecl gearman to use this application');
-		}		
-	}
+        /*
+        Cek apakah pecl gearman terinstall atau belum
+         */
+        if (!class_exists('GearmanClient')) {
+            throw new GearmanException('Please install pecl gearman to use this application');
+        }
+    }
 
-	/**
-	 * Register ioc container
-	 * @return void
-	 */
-	public function register()
-	{
-		$this->app->bind('ganapatih.ioc.apitoken', function() {
-			return new ApiTokenFilter;
-		});
-		
-		$this->app->bind('ganapatih.ioc.token', function() {
-			return new Token;
-		});
+    /**
+     * Register IoC Container
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->bind('ganapatih.ioc.apitoken', function () {
+            return new ApiTokenFilter;
+        });
 
-		$this->setCustomFilterHandler();
-	}
-	
-	public function providers()
-	{
-		return array('ganapatih.ioc.apitoken', 'ganapatih.ioc.token');
-	}
+        $this->app->bind('ganapatih.ioc.token', function () {
+            return new Token;
+        });
 
-	private function setCustomExceptionListener()
-	{
-		App::error(function(GearmanException $exception) {
-			return View::make('exceptions.pecl', array('message' => $exception->getMessage()));
-		});
+        $this->setCustomFilterHandler();
+    }
 
-		App::error(function(ApiException $exception) {	
-			return Response::json(array('status' => 'error', 'message' => $exception->getMessage()));
-		});
-	}
+    public function providers()
+    {
+        return array('ganapatih.ioc.apitoken', 'ganapatih.ioc.token');
+    }
 
-	private function setCustomFilterHandler()
-	{
-		Route::filter('ganapatih.filter.token', 'ganapatih.ioc.apitoken');
-	}
+    private function setCustomExceptionListener()
+    {
+        App::error(function (GearmanException $exception) {
+            return View::make('exceptions.pecl', array('message' => $exception->getMessage()));
+        });
+
+        App::error(function (ApiException $exception) {
+            return Response::json(array('status' => 'error', 'message' => $exception->getMessage()));
+        });
+    }
+
+    private function setCustomFilterHandler()
+    {
+        Route::filter('ganapatih.filter.token', 'ganapatih.ioc.apitoken');
+    }
 
 }
